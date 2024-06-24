@@ -4,7 +4,7 @@ const input = document.querySelector('#fruit');
 // Select the <ul> element inside the element with the class 'suggestions' and store it in the variable 'suggestions'
 const suggestions = document.querySelector('.suggestions ul');
 
-// Create an array named 'fruit' containing a list of fruit names as strings
+// Create an array named 'fruit' containing a list of fruit names as strings with their corresponding emojis where available
 const fruit = [
 	'Apple 🍎', 'Apricot', 'Avocado 🥑', 'Banana 🍌', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry 🫐',
 	'Boysenberry', 'Currant', 'Cherry 🍒', 'Coconut 🥥', 'Cranberry', 'Cucumber 🥒', 'Custard apple', 'Damson',
@@ -42,8 +42,9 @@ const fruit = [
 	'Papoose', 'Paradise nut', 'Passiflora', 'Pawpaw', 'Peach palm', 'Peanut butter fruit', 'Pearl millet',
 	'Pequi', 'Pepino', 'Pereskia', 'Persian lime', 'Peruvian apple', 'Phalsa', 'Phalsa fruit', 'Pigeon pea',
 	'Pigface', 'Pili nut', 'Pineberry', 'Pineapple guava', 'Pineapple sage', 'Pink grapefruit', 'Pitanga',
-	'Pitaya', 'Pitomba', 'Pivka', 'Plumcot', 'Pomegranate', 'Pond apple', 'Poroporo', 'Possumhaw', 'Prairie turnip', 'Prickly pear', 'Primrose', 'Princess pine', 'Purple granadilla', 'Purple guava', 'Purple mangosteen', 
-  'Queen garnet plum', 'Quenepa', 'Quinine', 'Rangpur', 'Red banana', 'Red currant', 'Red mombin', 'Red mulberry',
+	'Pitaya', 'Pitomba', 'Pivka', 'Plumcot', 'Pomegranate', 'Pond apple', 'Poroporo', 'Possumhaw', 'Prairie turnip',
+	'Prickly pear', 'Primrose', 'Princess pine', 'Purple granadilla', 'Purple guava', 'Purple mangosteen',
+	'Queen garnet plum', 'Quenepa', 'Quinine', 'Rangpur', 'Red banana', 'Red currant', 'Red mombin', 'Red mulberry',
 	'Red sage', 'Riberry', 'Rockmelon', 'Rollinia', 'Rose apple', 'Rose hip', 'Rosemary', 'Rosigold mango',
 	'Rosy apple', 'Rumberry', 'Russian olive', 'Rutabaga', 'Salak', 'Santol', 'Sapodilla', 'Sapote', 'Sargent crabapple',
 	'Sawo', 'Sea buckthorn', 'Seagrape', 'Serviceberry', 'Seven star fruit', 'Shagbark', 'Shepherd’s purse',
@@ -58,7 +59,6 @@ const fruit = [
 	'Wolfberry', 'Wood apple', 'Wood pear', 'Woolly apple', 'Yam', 'Yam bean', 'Yellow granadilla', 'Yellow passionfruit',
 	'Youngberry', 'Zucchini', 'Zwetschge'
 ];
-
 
 // Define a function named 'search' that takes a string 'str' as a parameter
 function search(str) {
@@ -87,7 +87,7 @@ function searchHandler(e) {
 	showSuggestions(results, inputVal);
 }
 
-// Defining a function named 'showSuggestions' that takes two parameters: 'results' (an array of search results) and 'inputVal' (the current value of the input field)
+// Define a function named 'showSuggestions' that takes two parameters: 'results' (an array of search results) and 'inputVal' (the current value of the input field)
 function showSuggestions(results, inputVal) {
 	// Clear the content of the 'suggestions' list by setting its 'innerHTML' to an empty string
 	suggestions.innerHTML = '';
@@ -125,3 +125,5 @@ input.addEventListener('keyup', searchHandler);
 
 // Add an event listener to the 'suggestions' list that listens for 'click' events and calls the 'useSuggestion' function when such an event occurs
 suggestions.addEventListener('click', useSuggestion);
+
+
