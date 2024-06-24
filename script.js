@@ -5,7 +5,60 @@ const input = document.querySelector('#fruit');
 const suggestions = document.querySelector('.suggestions ul');
 
 // Create an array named 'fruit' containing a list of fruit names as strings
-const fruit = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry', 'Boysenberry', 'Currant', 'Cherry', 'Coconut', 'Cranberry', 'Cucumber', 'Custard apple', 'Damson', 'Date', 'Dragonfruit', 'Durian', 'Elderberry', 'Feijoa', 'Fig', 'Gooseberry', 'Grape', 'Raisin', 'Grapefruit', 'Guava', 'Honeyberry', 'Huckleberry', 'Jabuticaba', 'Jackfruit', 'Jambul', 'Juniper berry', 'Kiwifruit', 'Kumquat', 'Lemon', 'Lime', 'Loquat', 'Longan', 'Lychee', 'Mango', 'Mangosteen', 'Marionberry', 'Melon', 'Cantaloupe', 'Honeydew', 'Watermelon', 'Miracle fruit', 'Mulberry', 'Nectarine', 'Nance', 'Olive', 'Orange', 'Clementine', 'Mandarine', 'Tangerine', 'Papaya', 'Passionfruit', 'Peach', 'Pear', 'Persimmon', 'Plantain', 'Plum', 'Pineapple', 'Pomegranate', 'Pomelo', 'Quince', 'Raspberry', 'Salmonberry', 'Rambutan', 'Redcurrant', 'Salak', 'Satsuma', 'Soursop', 'Star fruit', 'Strawberry', 'Tamarillo', 'Tamarind', 'Yuzu'];
+const fruit = [
+	'Apple 🍎', 'Apricot', 'Avocado 🥑', 'Banana 🍌', 'Bilberry', 'Blackberry', 'Blackcurrant', 'Blueberry 🫐',
+	'Boysenberry', 'Currant', 'Cherry 🍒', 'Coconut 🥥', 'Cranberry', 'Cucumber 🥒', 'Custard apple', 'Damson',
+	'Date', 'Dragonfruit', 'Durian', 'Elderberry', 'Feijoa', 'Fig', 'Gooseberry', 'Grape 🍇', 'Raisin',
+	'Grapefruit', 'Guava', 'Honeyberry', 'Huckleberry', 'Jabuticaba', 'Jackfruit', 'Jambul', 'Juniper berry',
+	'Kiwifruit 🥝', 'Kumquat', 'Lemon 🍋', 'Lime', 'Loquat', 'Longan', 'Lychee', 'Mango 🥭', 'Mangosteen',
+	'Marionberry', 'Melon 🍈', 'Cantaloupe', 'Honeydew', 'Watermelon 🍉', 'Miracle fruit', 'Mulberry', 'Nectarine',
+	'Nance', 'Olive 🫒', 'Orange 🍊', 'Clementine', 'Mandarine', 'Tangerine', 'Papaya', 'Passionfruit', 'Peach 🍑',
+	'Pear 🍐', 'Persimmon', 'Plantain', 'Plum', 'Pineapple 🍍', 'Pomegranate', 'Pomelo', 'Quince', 'Raspberry',
+	'Salmonberry', 'Rambutan', 'Redcurrant', 'Salak', 'Satsuma', 'Soursop', 'Star fruit', 'Strawberry 🍓',
+	'Tamarillo', 'Tamarind', 'Yuzu', 'Açaí', 'Acerola', 'Ackee', 'African cucumber', 'American mayapple',
+	'Araza', 'Atemoya', 'Babaco', 'Bacaba', 'Bael', 'Barbados cherry', 'Barberry', 'Bearberry', 'Beechnut',
+	'Bignay', 'Biriba', 'Bitter melon', 'Black mulberry', 'Blood lime', 'Blood orange', 'Blue tongue',
+	'Bolwarra', 'Bopple nut', 'Brazil nut', 'Breadfruit', 'Buddha’s hand', 'Buffaloberry', 'Camu camu',
+	'Canistel', 'Capuli cherry', 'Carambola', 'Cardon', 'Ceylon gooseberry', 'Chempedak', 'Cherimoya',
+	'Chilean guava', 'Chokeberry', 'Cloudberry', 'Cluster fig', 'Coco de mer', 'Cocoplum', 'Cornelian cherry',
+	'Crowberry', 'Cupuaçu', 'Damson plum', 'Davidson’s plum', 'Desert lime', 'Dodder laurel', 'Double coconut',
+	'Duku', 'Elephant apple', 'Emu apple', 'Emu berry', 'Fairy apple', 'False mastic', 'Farkleberry',
+	'Fennel', 'Ficus', 'Finger lime', 'Forest strawberry', 'Fox grape', 'Fuyu persimmon', 'Genip', 'Ginger',
+	'Gingerberry', 'Goji berry', 'Golden apple', 'Golden berry', 'Goumi', 'Graviola', 'Green almond',
+	'Greengage', 'Ground plum', 'Hackberry', 'Hala fruit', 'Hardy kiwi', 'Hawthorn', 'Hog plum', 'Horned melon',
+	'Horse apple', 'Huito', 'Ice cream bean', 'Illawarra plum', 'Indian almond', 'Indian fig', 'Indian gooseberry',
+	'Indian jujube', 'Indian olive', 'Indian prune', 'Indian strawberry', 'Jaboticaba', 'Jamaican cherry',
+	'Jamaican tangelo', 'Jambolan', 'Japanese persimmon', 'Jelly palm', 'Jocote', 'Jostaberry', 'Jujube',
+	'Juneberry', 'Kabosu', 'Kaffir lime', 'Kaffir plum', 'Kahikatea', 'Kakadu plum', 'Kandis', 'Kantola',
+	'Kappit', 'Karanda', 'Kepel', 'Keule', 'Key lime', 'Kiwano', 'Korlan', 'Kousa dogwood', 'Kumquat',
+	'Kutjera', 'Lablab bean', 'Langsat', 'Lanzones', 'Lardizabala', 'Lemato', 'Lemon aspen', 'Lemon verbena',
+	'Limeberry', 'Lingonberry', 'Lippens mango', 'Little gooseberry', 'Lucuma', 'Madrono', 'Malay apple',
+	'Mammee apple', 'Mammea', 'Mamoncillo', 'Mandarin', 'Mandarinquat', 'Mangaba', 'Mango melon', 'Manoao',
+	'Marang', 'Maraschino cherry', 'Marionberry', 'Marula', 'Mayapple', 'Medlar', 'Midgen berry', 'Mirabelle',
+	'Mock strawberry', 'Monkey apple', 'Monkey orange', 'Monstera', 'Morinda', 'Mountain papaya', 'Mundu',
+	'Murta', 'Muscadine', 'Musk cucumber', 'Musk melon', 'Nance', 'Natal plum', 'Navel orange', 'Nere',
+	'Nettle', 'Nonda plum', 'Northern hackberry', 'Nutmeg', 'Nuytsia', 'Oblong lime', 'Oil palm', 'Olo',
+	'Ombu', 'Onion', 'Opuntia', 'Orangelo', 'Oranji', 'Oregon grape', 'Ortanique', 'Paddy', 'Pandanus',
+	'Papoose', 'Paradise nut', 'Passiflora', 'Pawpaw', 'Peach palm', 'Peanut butter fruit', 'Pearl millet',
+	'Pequi', 'Pepino', 'Pereskia', 'Persian lime', 'Peruvian apple', 'Phalsa', 'Phalsa fruit', 'Pigeon pea',
+	'Pigface', 'Pili nut', 'Pineberry', 'Pineapple guava', 'Pineapple sage', 'Pink grapefruit', 'Pitanga',
+	'Pitaya', 'Pitomba', 'Pivka', 'Plumcot', 'Pomegranate', 'Pond apple', 'Poroporo', 'Possumhaw', 'Prairie turnip', 'Prickly pear', 'Primrose', 'Princess pine', 'Purple granadilla', 'Purple guava', 'Purple mangosteen', 
+  'Queen garnet plum', 'Quenepa', 'Quinine', 'Rangpur', 'Red banana', 'Red currant', 'Red mombin', 'Red mulberry',
+	'Red sage', 'Riberry', 'Rockmelon', 'Rollinia', 'Rose apple', 'Rose hip', 'Rosemary', 'Rosigold mango',
+	'Rosy apple', 'Rumberry', 'Russian olive', 'Rutabaga', 'Salak', 'Santol', 'Sapodilla', 'Sapote', 'Sargent crabapple',
+	'Sawo', 'Sea buckthorn', 'Seagrape', 'Serviceberry', 'Seven star fruit', 'Shagbark', 'Shepherd’s purse',
+	'Sierra Leone', 'Silverberry', 'Sloe', 'Small persimmon', 'Snowberry', 'Soapberry', 'Soursop', 'Spanish cherry',
+	'Spanish lime', 'Speckled apple', 'Speckled pear', 'Sphene', 'Spring snow', 'Staghorn', 'Star apple',
+	'Star gooseberry', 'Starfruit', 'Strawberry guava', 'Strawberry pear', 'Sugar apple', 'Surinam cherry',
+	'Sweet granadilla', 'Sweet lime', 'Sweet orange', 'Sweet pepper', 'Sycamore fig', 'Tamarind', 'Tangelo',
+	'Tangerine', 'Tart cherry', 'Tazumal', 'Thimbleberry', 'Tomato', 'Tropic sun', 'Tropical almond', 'Tropical cherry',
+	'Tropical fig', 'Umbu', 'Uvalha', 'Velvet apple', 'Velvet tamarind', 'Victoria plum', 'Vine apple',
+	'Wax apple', 'Wax jambu', 'Wheat', 'Whortleberry', 'White currant', 'White mulberry', 'Wild cherry', 'Wild fig',
+	'Wild grape', 'Wild lime', 'Wild mango', 'Wild orange', 'Wild passion fruit', 'Wild strawberry', 'Wineberry',
+	'Wolfberry', 'Wood apple', 'Wood pear', 'Woolly apple', 'Yam', 'Yam bean', 'Yellow granadilla', 'Yellow passionfruit',
+	'Youngberry', 'Zucchini', 'Zwetschge'
+];
+
 
 // Define a function named 'search' that takes a string 'str' as a parameter
 function search(str) {
@@ -34,7 +87,7 @@ function searchHandler(e) {
 	showSuggestions(results, inputVal);
 }
 
-// Define a function named 'showSuggestions' that takes two parameters: 'results' (an array of search results) and 'inputVal' (the current value of the input field)
+// Defining a function named 'showSuggestions' that takes two parameters: 'results' (an array of search results) and 'inputVal' (the current value of the input field)
 function showSuggestions(results, inputVal) {
 	// Clear the content of the 'suggestions' list by setting its 'innerHTML' to an empty string
 	suggestions.innerHTML = '';
