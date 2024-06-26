@@ -68,7 +68,7 @@ function search(str) {
 	// Check if the length of the input string 'str' is greater than 0
 	if (str.length > 0) {
 		// Filter the 'fruit' array to include only the items that contain the input string 'str' (case insensitive) and store the filtered results in the 'results' array
-		results = fruit.filter(item => item.toLowerCase().includes(str.toLowerCase()));
+		results = fruit.filter(item => item.toLowerCase().startsWith(str.toLowerCase()));
 	}
 
 	// Return the 'results' array containing the filtered fruit names
